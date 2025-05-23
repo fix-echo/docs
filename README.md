@@ -1,130 +1,90 @@
-# Prisma Documentation
+# 1.答疑篇\_学习路线与答疑
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/prisma/docs/blob/main/CONTRIBUTING.md) ![Discord](https://img.shields.io/discord/937751382725886062)
+### 学习路线
 
-This repository contains the [source code](./src) and the [content](./content) for the [Prisma documentation](https://www.prisma.io/docs).
+感谢购买小册!
 
-## Contributing to the docs
+这本小册由基础篇、实战篇、源码篇、面试篇四大篇章组成，预计 70 篇左右。
 
-New contributors are welcome! Read through the [contributing guide](CONTRIBUTING.md) to learn how you can contribute to the Prisma documentation.
+对于初学者，建议：
 
-## Run the docs site locally
+1. 看完基础篇前 20 篇，了解如何使用脚手架、如何定义路由、如何获取数据、如何定义样式等写 Next.js 项目最基本的知识
+2. 基础篇后 16 篇作为开发手册使用，可以 10 分钟看完一篇，了解大致有哪些内容就行，用到时再查
+3. 进入实战篇，至少写出第一个实战项目 React Notes，在实战中体会 Next.js 的用法
+4. 进入源码篇，了解实现原理，知其然，知其所以然
 
-1. Clone this repository.
-2. On your computer, open a terminal window in the repository's directory.
-3. Run the following commands:
+### 常见问题
 
-```
-cd docs
-npm install
-npm run start
-```
+**Q：学习 Next.js 需要 React 基础吗？**
 
-Be sure to also test building the static site:
+A：需要一点，但不多。如果你用过 React 做过项目，或是看过文档、写过 Demo，那够了，有遇到 React 问题不会的再去查就行。
 
-```
-npm run clean && npm run build
-npm run serve
-```
+\
 
-To prettify or format the code, run:
 
-```
-npm run format
-```
+**Q: 学习 Next.js 需要 Node.js 基础吗？**
 
-Visit `http://localhost:3000` to view the app.
+A: 需要一点，但不多，比 React 还少。如果你给自己制定先系统学习 React，再学习 Node，最后学习 Next.js 这种看似“完美”的学习路线，我建议你尽早放弃。能不能完成这么漫长的学习周期，心里没点b数吗？
 
-## Configure
+学习一定不能讲究“延迟满足”。整个过程时间周期太长，如果中间看不到任何反馈，你很容易就放弃。就算过程中实现了某个小目标，虽然感受到了自己的优秀和成长，但这种反馈往往又比较温和。一个东西花时间久又看不到什么大的成效，出于人趋利避害的本性，人自然就会选择逃避、放弃。
 
-Write MDX files in `content` folder.
+正是因为学习本身就是要克服痛苦的，所以学习更要讲究“及时反馈、及时满足”。 简单来说，不要磨磨唧唧，没那么难，直接上 Next.js，学完基础知识就做项目，过程虽痛苦但高效。做项目和解决实际问题才是最真实、有效、直接的反馈。
 
-Most frontmatter for the docs are the same as [Docusaurus Frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter). There are some differences due to legacy frontmatter which are handled [here](https://github.com/prisma/docs/blob/94b04aa1d8f723802e715b531b9808bab2d7ae15/src/theme/DocItem/Metadata/index.tsx).
+PS：其实“学习”这件事情也是需要学习的，可以听听冴羽长达 3 小时的关于[《如何高效学习》](https://www.yuque.com/yayu/blog/grow#TdtOC)的絮叨。
 
-When possible, avoid using custom frontmatter fields and use the default ones available via Docusaurus.
+\
 
-## Inserting, moving and deleting files
 
-All files/folders in the context are prefixed with a _position_ which indicates the order in which they appear in the sidenav on the docs website. This makes it cumbersome to insert, move and delete files because the positions of a number of other files (if not all) in the same folder might need to be adjusted. Thanks to [Luca Steeb](https://github.com/steebchen/), you can perform these operations with a dedicated CLI called [`mdtool`](https://gist.githubusercontent.com/steebchen/bd085ebde1fcf4242e3fdd0df4d202a6/raw/c04e3d262eb6a302a9fab98f6428fec9329681e2/mdtool).
+**Q：Next.js、Nuxt.js、Nest.js 傻傻分不清楚**
 
-### Install
+A：简单的说，Next 是 React 全栈框架，Nuxt 是 Vue 全栈框架，Nest 是后端框架。也就说，Next.js 适合用来做全栈项目，在 Next.js 中既可以写页面，又可以写接口，一个项目全部搞定。
 
-First, install `wget`:
+而且 Next.js 内置了各种方便开发的 API 和工具，所以要快速创建一个性能还不错的全栈项目，那就用 Next.js。
 
-```bash
-brew install wget
-```
+Nuxt.js 对标 Next.js，可以放在一起讲，但其实也没有什么放在一起讲的必要，这更多是技术选型问题，会 React 用 Next.js ，会 Vue 用 Nuxt.js。而 Nest.js 是纯后端框架，也就是用来纯写后端服务。简单来说，写全栈项目用 Next 和 Nuxt，纯写后端服务，用 Nest。三者解决的是不同的场景问题，根据自己的需要选择即可。
 
-Then use `wget` to install `mdtool`:
+\
 
-```bash
-wget https://gist.githubusercontent.com/steebchen/bd085ebde1fcf4242e3fdd0df4d202a6/raw/c04e3d262eb6a302a9fab98f6428fec9329681e2/mdtool -qO /usr/local/bin/mdtool
-chmod +x /usr/local/bin/mdtool
-```
 
-### Usage
+**Q：学习 Next.js 有前途吗？**
 
-#### Overview
+A：目前 Next.js Npm 周均下载量 634W 左右，是国外主流的技术选型。React 首推的生产框架也是 Next.js。
 
-```
-mdtool insert 3
-mdtool swap A B
-mdtool move A B
-mdtool remove 4
-```
+而且 Next.js 背靠 Vercel，挖了不少业界大佬，比如 Sebastian Markbage（原 React 团队 Tech Lead）、Rich Harries（Svelte 作者）、Donny（SWC 作者）、Tobias Koppers（Webpack 作者）、Jared Palme（Turborepo 创始人）等等，全明星的开发团队，未来可期。
 
-#### `mdtool insert`
+PS：至于人的前途，终归是要靠自己去创造的……
 
-Make place for a new file at given index and increment all numbers by one after that index:
+\
 
-```
-$ mdtool insert INDEX
 
-# e.g.:
-$ mdtool insert 2
+**Q：为什么推荐买这本小册？**
 
-# Result: for files 01-a, 02-b, 03-c, and 04-d; 03-c is renamed to 04-c and 04-d is renamed to 05-d so you can create a new file at index 2
-```
+A：因为我写的小册我自然是要推荐的……开个玩笑，尽管 Next.js 是一个非常受欢迎的框架，但 Next.js 在中文文档汉化方面十分落后，能搜到的中文文档基本都停留在非常老的版本上且处于无人维护状态。Next.js 于 2022 年底推出了基于 RSC 的 v13 版本，提供了全新的开发方式，文档也早已重写，然而这些内容在国内却没有系统完整的介绍，能搜到的更多是单篇的粗略介绍，技术细节寥寥。
 
-#### `mdtool swap`
+这就导致大家在使用 Next.js 的时候也许可以快速上手，但对于高阶的 API 却知之甚少。有更简单、便捷的实现方案却不知道，对于细枝末节上的问题需要多次深入英文文档翻找，对于一些没有过多解释的地方更需要自己反复测试和理解，这无疑增大了使用 Next.js 的成本。
 
-Swap two files; specify both filenames (prefix numbers get automatically adjusted):
+我写的这本小册，也许不一定够好，但内容至少是新的、完整的、有体系的、有细致讲解的。与其自己费力的阅读英文文档，搜一堆细节问题的答案，踩一堆坑，不如跟着这本小册的内容循序渐进，肯定也会遇到一些问题，但一定比自己学省时省力。节省出的时间，请去创造自己的产品，去优化自己的业务，去找对象吧！
 
-```
-$ mdtool swap FILENAME1 FILENAME2
+\
 
-# e.g.:
-$ mdtool swap 03-file1.mdx 07-file2.mdx
 
-# Result: Files are now named: 03-file2.mdx 07-file1.mdx
-```
+**Q：如何加入学习群？**
 
-#### `mdtool move`
+A：小册购买后，小册主页有个 “+学习群” 按钮，添加好友后回复特殊口令即会邀请你加入学习群。
 
-Move a given file to another given index
+PS：因为最近机器人被封，所以可以直接扫码入群。
 
-```
-$ mdtool move FILENAME INDEX
+\
 
-# e.g.:
-$ mdtool move 05-file.mdx 2
 
-# Result: 05-file.mdx is move to 02-file.mdx, plus previous files 02-*, 03-*, 04-* are incremented
-```
+**Q：还有什么建议？**
 
-#### `mdtool remove`
+A: 费曼学习法是一个非常知名、备受推崇的学习法。它的核心是 —— 当你准备学习一门新知识时，必须站在传授者的立场，假设自己要向别人讲解这门知识。那么你一定要用最简洁、清晰和易于理解的语言表达出来，才能让行外的人也能听懂。
 
-Shift all other items by -1 at a given index:
+简单的来说就是确定要学习的目标，进行主题学习，然后以教为学，在输出的过程中不断重新学习、回顾和反思。
 
-```
-$ mdtool remove INDEX
+输出其实是一种对学习者更高的要求。因为在输出知识时你就不能简单地复制粘贴，而是既能总结出知识的精华，又能加上自己深刻的理解，还要用大家都能看懂、听懂的语言往外传播。
 
-# e.g.:
-$ mdtool remove 2
+希望大家在阅读此本小册的过程中，能够持续输出，你学习时遇到的那些问题一定还会有其他小伙伴会遇到，将其解决方法和实现思路写出来，勇敢的分享出来吧！
 
-# Result: 01-a, 02-b, 03-c, 04-d becomes 01-a, 02-b, 02-c, 03-d; 02-b is supposed to be manually deleted
-```
-
-#### Thanks Luca
-
-![](https://res.cloudinary.com/prismaio/image/upload/v1628765536/docs/LJ0FGHk_u2jjxv.png)
+PS：欢迎将自己原创的 Next.js 相关文章分享到此篇评论区中，至少我看到一定会给你点赞的！
